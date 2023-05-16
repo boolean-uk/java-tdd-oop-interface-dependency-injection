@@ -8,8 +8,10 @@ public class Scrabble {
     public Scrabble() {
         Alphabet englishAlphabet = new EnglishAlphabet();
         Alphabet russianAlphabet = new RussianAlphabet();
+        Alphabet greekAlphabet = new GreekAlphabet();
         this.letterScores = englishAlphabet.getLetterScores();
         this.letterScores.putAll(russianAlphabet.getLetterScores());
+        this.letterScores.putAll(greekAlphabet.getLetterScores());
     }
 
     public int score(String word) {     //Do not change this method
