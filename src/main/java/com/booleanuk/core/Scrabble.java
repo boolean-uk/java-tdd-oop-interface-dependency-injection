@@ -6,11 +6,13 @@ public class Scrabble {
     Map<Character, Integer> letterScores;
 
     public Scrabble() {
-        Alphabet a = new Alphabet();
-        this.letterScores = a.getLetterScores();
+        Alphabet englishAlphabet = new EnglishAlphabet();
+        Alphabet russianAlphabet = new RussianAlphabet();
+        this.letterScores = englishAlphabet.getLetterScores();
+        this.letterScores.putAll(russianAlphabet.getLetterScores());
     }
 
-    public int score(String word) {
+    public int score(String word) {     //Do not change this method
         int total = 0;
 
         for (char ch : word.toCharArray()) {
