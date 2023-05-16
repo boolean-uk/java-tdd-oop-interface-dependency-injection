@@ -21,4 +21,5 @@ public class Scrabble {
 
         return total;
     }
+
 }
