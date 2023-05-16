@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 class ScrabbleTest {
 
-    private Alphabet english;
-    private Alphabet greek;
-    private Alphabet russian;
+    static private Alphabet english;
+    static private Alphabet greek;
+    static private Alphabet russian;
 
     @BeforeAll
-    public void setup() {
+    public static void setup() {
         english = new EnglishAlphabet();
         greek = new GreekAlphabet();
         russian = new RussianAlphabet();
