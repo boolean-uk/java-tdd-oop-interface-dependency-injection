@@ -4,13 +4,22 @@ import java.util.Map;
 
 public class Scrabble {
     Map<Character, Integer> letterScores;
-
-    public Scrabble() {
-        Alphabet a = new Alphabet();
-        this.letterScores = a.getLetterScores();
-    }
+    Alphabet a;
 
     public int score(String word) {
+
+        if(word.contains("дврфъ")) {
+            a = new RussianAlphabet();
+        }
+        else if(word.contains("φεψωλ")) {
+            a = new GreekAlphabet();
+        }
+        else {
+            a = new EnglishAlphabet();
+        }
+
+        this.letterScores = a.getLetterScores();
+
         int total = 0;
 
         for (char ch : word.toCharArray()) {
