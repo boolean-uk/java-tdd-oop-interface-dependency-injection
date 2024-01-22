@@ -6,9 +6,14 @@ public class Scrabble {
     Map<Character, Integer> letterScores;
 
     public Scrabble() {
-        Alphabet a = new Alphabet();
+        Alphabet a = new Greek();
+        Alphabet b = new English();
+        Alphabet c = new Russian();
         this.letterScores = a.getLetterScores();
+        this.letterScores.putAll(b.getLetterScores());
+        this.letterScores.putAll(c.getLetterScores());
     }
+
 
     public int score(String word) {
         int total = 0;
