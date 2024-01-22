@@ -45,20 +45,31 @@ class ScrabbleTest {
         Scrabble scrabble = new Scrabble(alphabet);
         Assertions.assertEquals(22, scrabble.score("quirky"));
     }
-
     @Test
     public void shouldScoreRussianLetters() {
-        // æ, ø, å not working...
-        Alphabet alphabet = new NorwegianAlphabet();
+        Alphabet alphabet = new RussianAlphabet();
         Scrabble scrabble = new Scrabble(alphabet);
-        Assertions.assertEquals(10, scrabble.score("prove"));
+        Assertions.assertEquals(18, scrabble.score("дврфъ"));
     }
 
     @Test
     public void shouldScoreGreekLetters() {
-        // æ, ø, å not working...
+        Alphabet alphabet = new GreekAlphabet();
+        Scrabble scrabble = new Scrabble(alphabet);
+        Assertions.assertEquals(20, scrabble.score("φεψωλ"));
+    }
+
+    @Test
+    public void shouldScoreNorwegianLetters() {
         Alphabet alphabet = new NorwegianAlphabet();
         Scrabble scrabble = new Scrabble(alphabet);
-        Assertions.assertEquals(18, scrabble.score("weight"));
+        Assertions.assertEquals(13, scrabble.score("prøve"));
+    }
+
+    @Test
+    public void shouldScoreNorwegian2Letters() {
+        Alphabet alphabet = new NorwegianAlphabet();
+        Scrabble scrabble = new Scrabble(alphabet);
+        Assertions.assertEquals(29, scrabble.score("høydepunkt"));
     }
 }

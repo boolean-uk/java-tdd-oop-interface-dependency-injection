@@ -32,9 +32,9 @@ public class NorwegianAlphabet implements Alphabet {
             put('x', 8);
             put('y', 7);
             put('z', 10);
-//            put('æ', 5);
-//            put('ø', 4);
-//            put('å', 5);
+            put('æ', 5);
+            put('ø', 4);
+            put('å', 5);
         }};
     }
 }
