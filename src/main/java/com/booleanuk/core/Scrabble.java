@@ -4,13 +4,16 @@ import java.util.Map;
 
 public class Scrabble {
     Map<Character, Integer> letterScores;
+    Alphabet a;
 
-    public Scrabble() {
-        Alphabet a = new Alphabet();
-        this.letterScores = a.getLetterScores();
+    public Scrabble(Alphabet a) {
+        this.a = a;
     }
 
     public int score(String word) {
+
+        this.letterScores = a.getLetterScores();
+
         int total = 0;
 
         for (char ch : word.toCharArray()) {
