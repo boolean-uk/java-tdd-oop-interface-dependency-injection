@@ -59,4 +59,11 @@ class ScrabbleTest {
         Scrabble scrabble = new Scrabble(a);
         Assertions.assertEquals(20, scrabble.score("φεψωλ"));
     }
+
+    @Test
+    public void shouldScoreNorwegianLetters() {
+        Alphabet a = new NorwegianAlphabet();
+        Scrabble scrabble = new Scrabble(a);
+        Assertions.assertEquals(14, scrabble.score("trøndelag"));
+    }
 }
