@@ -6,17 +6,11 @@ public class Scrabble {
     Map<Character, Integer> letterScores;
     Alphabet a;
 
-    public int score(String word) {
+    public Scrabble(Alphabet a) {
+        this.a = a;
+    }
 
-        if(word.contains("дврфъ")) {
-            a = new RussianAlphabet();
-        }
-        else if(word.contains("φεψωλ")) {
-            a = new GreekAlphabet();
-        }
-        else {
-            a = new EnglishAlphabet();
-        }
+    public int score(String word) {
 
         this.letterScores = a.getLetterScores();
 
