@@ -8,31 +8,34 @@ public class GreekAlphabet implements Alphabet{
     public Map<Character, Integer> getLetterScores() {
 
 
-        return new HashMap<>(){{
-            put('α', 1);
-            put('ε', 1);
-            put('ι', 1);
-            put('ο', 1);
-            put('φ', 1);
-            put('ξ', 1);
-            put('β', 2);
-            put('δ', 2);
-            put('π', 2);
-            put('γ', 3);
-            put('η', 3);
-            put('ν', 3);
-            put('τ', 3);
-            put('ζ', 4);
-            put('κ', 4);
-            put('ρ', 4);
-            put('ψ', 4);
-            put('λ', 4);
-            put('θ', 5);
-            put('x', 5);
-            put('μ', 8);
-            put('σ', 8);
-            put('υ', 10);
-            put('ω', 10);
+        return new HashMap<>() {{
+            put('\u03B1', 1);
+            put('\u03B5', 1);
+            put('\u03B9', 1);
+            put('\u03BF', 1);
+            put('\u03C6', 1);
+            put('\u03BE', 1);
+            put('\u03B2', 2);
+            put('\u03B4', 2);
+            put('\u03C0', 2);
+            put('\u03B3', 3);
+            put('\u03B7', 3);
+            put('\u03BD', 3);
+            put('\u03C4', 3);
+            put('\u03B6', 4);
+            put('\u03BA', 4);
+            put('\u03C1', 4);
+            put('\u03C8', 4);
+            put('\u03BB', 4);
+            put('\u03B8', 5);
+            put('\u03C7', 5);
+            put('\u03BC', 8);
+            put('v', 4);
+            put('w', 4);
+            put('x', 8);
+            put('\u03C3', 8);
+            put('\u03C5', 10);
+            put('\u03C9', 10);
         }};
     }
 }

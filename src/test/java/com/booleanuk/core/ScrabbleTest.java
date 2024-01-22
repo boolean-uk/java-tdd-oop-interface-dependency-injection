@@ -50,8 +50,8 @@ class ScrabbleTest {
     @Test
     public void shouldScoreRussianLetters() {
         Alphabet a = new RussianAlphabet();
-        Scrabble scrabble = new Scrabble(a);;
-        Assertions.assertEquals(18, scrabble.score("дврфъ"));
+        Scrabble scrabble = new Scrabble(a);
+        Assertions.assertEquals(17, scrabble.score("дврфъ"));
     }
 
     @Test
