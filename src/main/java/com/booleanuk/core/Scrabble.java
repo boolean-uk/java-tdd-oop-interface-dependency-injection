@@ -3,11 +3,10 @@ package com.booleanuk.core;
 import java.util.Map;
 
 public class Scrabble {
-    Map<Character, Integer> letterScores;
+    private final Map<Character, Integer> letterScores;
 
-    public Scrabble() {
-        Alphabet a = new Alphabet();
-        this.letterScores = a.getLetterScores();
+    public Scrabble(LetterScoreProvider provider) {
+        this.letterScores = provider.getLetterScores();
     }
 
     public int score(String word) {
