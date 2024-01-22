@@ -48,15 +48,15 @@ class ScrabbleTest {
 
     @Test
     public void shouldScoreRussianLetters() {
-        Alphabet englishalphabet = new EnglishAlphabet();
-        Scrabble scrabble = new Scrabble(englishalphabet);
+        Alphabet russianAlphabet = new RussianAlphabet();
+        Scrabble scrabble = new Scrabble(russianAlphabet);
         Assertions.assertEquals(18, scrabble.score("дврфъ"));
     }
 
     @Test
     public void shouldScoreGreekLetters() {
-        Alphabet englishalphabet = new EnglishAlphabet();
-        Scrabble scrabble = new Scrabble(englishalphabet);
+        Alphabet greekAlphabet = new GreekAlphabet();
+        Scrabble scrabble = new Scrabble(greekAlphabet);
         Assertions.assertEquals(20, scrabble.score("φεψωλ"));
     }
 }
