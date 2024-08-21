@@ -6,8 +6,17 @@ public class Scrabble {
     Map<Character, Integer> letterScores;
 
     public Scrabble() {
-        Alphabet a = new Alphabet();
+        Alphabet a = new EnglishAlphabet();
         this.letterScores = a.getLetterScores();
+    }
+
+    public Scrabble(Language l){
+        Alphabet a = switch (l) {
+			case Language.English -> new EnglishAlphabet();
+			case Language.Russian -> new RussianAlphabet();
+			case Language.Greek -> new GreekAlphabet();
+		};
+		this.letterScores = a.getLetterScores();
     }
 
     public int score(String word) {
@@ -22,4 +31,7 @@ public class Scrabble {
 
         return total;
     }
+
+
+
 }
