@@ -1,0 +1,2 @@
+    public Map<Character, Integer> getLetterScores() {
+};
