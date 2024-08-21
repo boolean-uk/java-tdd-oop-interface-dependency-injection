@@ -11,19 +11,12 @@ public class Scrabble {
     }
 
     public Scrabble(Language l){
-        Alphabet a = null;
-        switch (l){
-            case Language.English:
-                a = new EnglishAlphabet();
-                break;
-            case Language.Russian:
-                a = new RussianAlphabet();
-                break;
-            case Language.Greek:
-                a = new GreekAlphabet();
-                break;
-        }
-        this.letterScores = a.getLetterScores();
+        Alphabet a = switch (l) {
+			case Language.English -> new EnglishAlphabet();
+			case Language.Russian -> new RussianAlphabet();
+			case Language.Greek -> new GreekAlphabet();
+		};
+		this.letterScores = a.getLetterScores();
     }
 
     public int score(String word) {
