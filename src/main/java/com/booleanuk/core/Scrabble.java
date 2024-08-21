@@ -6,7 +6,7 @@ public class Scrabble {
     Map<Character, Integer> letterScores;
 
     public Scrabble() {
-        Alphabet a = new Alphabet();
+        EnglishAlphabet a = new EnglishAlphabet();
         this.letterScores = a.getLetterScores();
     }
 
