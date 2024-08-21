@@ -2,7 +2,6 @@ package com.booleanuk.core;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -17,21 +16,17 @@ public class GreekAlphabet implements Alphabet{
 			while (sc.hasNext()){
 				String line = sc.nextLine();
 				char splitChar = line.charAt(0);
-				String splitstr = String.valueOf(splitChar);
 				line = line.substring(1, line.length()-1).replaceAll("\\s", "");
 				int splitindex = line.indexOf(splitChar);
-				String lts  = line.substring(0, splitindex);
-				String val = line.substring(splitindex+1, line.length());
-				String[] letters = lts.split(",");
-				int value = Integer.valueOf(val);
+				String validLettersCommaSeperated  = line.substring(0, splitindex);
+				String valueStr = line.substring(splitindex+1, line.length());
+
+				String[] letters = validLettersCommaSeperated.split(",");
+				int value = Integer.valueOf(valueStr);
 
 				for(String str: letters){
 					greekAlphabet.put(str.charAt(0), value);
 				}
-
-
-				System.out.println(letters);
-
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

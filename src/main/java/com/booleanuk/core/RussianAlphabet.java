@@ -16,21 +16,17 @@ public class RussianAlphabet implements Alphabet{
 			while (sc.hasNext()){
 				String line = sc.nextLine();
 				char splitChar = line.charAt(0);
-				String splitstr = String.valueOf(splitChar);
 				line = line.substring(1, line.length()-1).replaceAll("\\s", "");
 				int splitindex = line.indexOf(splitChar);
-				String lts  = line.substring(0, splitindex);
-				String val = line.substring(splitindex+1, line.length());
-				String[] letters = lts.split(",");
-				int value = Integer.valueOf(val);
+				String validLettersCommaSeperated  = line.substring(0, splitindex);
+				String valueStr = line.substring(splitindex+1, line.length());
+
+				String[] letters = validLettersCommaSeperated.split(",");
+				int value = Integer.valueOf(valueStr);
 
 				for(String str: letters){
 					russianAlphabet.put(str.charAt(0), value);
 				}
-
-
-				System.out.println(letters);
-
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
