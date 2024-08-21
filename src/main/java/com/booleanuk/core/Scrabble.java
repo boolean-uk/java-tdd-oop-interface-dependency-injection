@@ -10,6 +10,22 @@ public class Scrabble {
         this.letterScores = a.getLetterScores();
     }
 
+    public Scrabble(Language l){
+        Alphabet a = null;
+        switch (l){
+            case Language.English:
+                a = new EnglishAlphabet();
+                break;
+            case Language.Russian:
+                a = new RussianAlphabet();
+                break;
+            case Language.Greek:
+                a = new GreekAlphabet();
+                break;
+        }
+        this.letterScores = a.getLetterScores();
+    }
+
     public int score(String word) {
         int total = 0;
 
@@ -22,4 +38,7 @@ public class Scrabble {
 
         return total;
     }
+
+
+
 }
