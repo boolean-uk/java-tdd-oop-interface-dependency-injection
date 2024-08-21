@@ -18,13 +18,10 @@ public class GreekAlphabet implements Alphabet{
 				String line = sc.nextLine();
 				char splitChar = line.charAt(0);
 				String splitstr = String.valueOf(splitChar);
-				System.out.println(splitstr);
 				line = line.substring(1, line.length()-1).replaceAll("\\s", "");
 				int splitindex = line.indexOf(splitChar);
 				String lts  = line.substring(0, splitindex);
 				String val = line.substring(splitindex+1, line.length());
-				System.out.println("hei");
-
 				String[] letters = lts.split(",");
 				int value = Integer.valueOf(val);
 
@@ -41,10 +38,5 @@ public class GreekAlphabet implements Alphabet{
 		}
 		System.out.println(greekAlphabet);
 		return greekAlphabet;
-	}
-
-	public static void main(String[] args) {
-		GreekAlphabet ga = new GreekAlphabet();
-		ga.getLetterScores();
 	}
 }
