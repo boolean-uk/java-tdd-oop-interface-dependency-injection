@@ -8,7 +8,7 @@ public class Scrabble {
 
     public Scrabble(Alphabet alphabet) {
         this.alphabet = alphabet;
-        this.letterScores = alphabet.getLetterScores();
+        this.letterScores = this.alphabet.getLetterScores();
     }
 
     public int score(String word) {
