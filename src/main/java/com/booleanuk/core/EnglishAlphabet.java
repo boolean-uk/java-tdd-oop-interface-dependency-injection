@@ -3,7 +3,9 @@ package com.booleanuk.core;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Alphabet {
+public class EnglishAlphabet implements GeneralAlphabet{
+
+    @Override
     public Map<Character, Integer> getLetterScores() {
         return new HashMap<>(){{
             put('a', 1);
