@@ -5,9 +5,8 @@ import java.util.Map;
 public class Scrabble {
     Map<Character, Integer> letterScores;
 
-    public Scrabble() {
-        Alphabet a = new Alphabet();
-        this.letterScores = a.getLetterScores();
+    public Scrabble(Alphabet language) {
+        this.letterScores = language.getLetterScore();
     }
 
     public int score(String word) {
@@ -21,5 +20,11 @@ public class Scrabble {
         }
 
         return total;
+    }
+
+    public static void main(String[] args) {
+        Alphabet nor = new Norwegian();
+        Scrabble scrabble = new Scrabble(nor);
+
     }
 }
