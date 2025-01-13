@@ -43,12 +43,12 @@ class ScrabbleTest {
     @Test
     public void shouldScoreRussianLetters() {
         Scrabble scrabble = new Scrabble();
-        Assertions.assertEquals(18, scrabble.score("дврфъ"));
+        Assertions.assertEquals(18, scrabble.scoreRussian("дврфъ"));
     }
 
     @Test
     public void shouldScoreGreekLetters() {
         Scrabble scrabble = new Scrabble();
-        Assertions.assertEquals(20, scrabble.score("φεψωλ"));
+        Assertions.assertEquals(20, scrabble.scoreGreek("φεψωλ"));
     }
 }
